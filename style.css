@@ -10,61 +10,53 @@ html,body{
     width:100%;
 }
 
-main{
+main
+{
     height: 100%;
     width: 100%;
-    background-color: white;
+    background-color: black;
+    color: white;
+
     
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 80px 1fr 1fr;
+
+    grid-template-areas: "header header header"
+                            "section section section"
+                            "div1 div2 div3";
+
+    gap: 10px;
+    padding: 10px;
 }
 
 
-.scroll{
-    height: 400px;
-    width: 100%;
-    background-color: grey;
-    padding: 20px;
-
-    display: flex;
-    gap: 20px;
-
-    flex-wrap: nowrap;
-    overflow: auto;
+header{
+    background-color: green;
+    grid-area: header;
 }
 
-.scroll::-webkit-scrollbar{
-    display: none;
-}
-
-.card{
-    height: 350px;
-    width: 300px;
-    background-color: white;
-
-    border-radius: 20px;
-    overflow: hidden;
-
-    flex-shrink: 0;
-
+.section{
+    background-color: red;
+    grid-area: section;
 
 }
 
-.card img{
-    height: 350px;
-    width: 100%;
-    
-    object-fit: cover;
-    object-position: center;
-}
-
-.card>.bottom{
-    height: 40%;
-    width: 100%;
-
-    background: linear-gradient(transparent,black);
-    color: black;
-}
-
-.card:hover{
-    bottom: 0;
+.div1
+{
+    background-color: blue;
+    grid-area: div1;
 
 }
+
+.div2
+{
+    grid-area: div2;
+    background-color: lightblue;
+}
+
+.div3{
+    grid-area: div3;
+    background-color: lightcoral;
+}
+
